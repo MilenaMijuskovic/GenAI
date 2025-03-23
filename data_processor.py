@@ -30,12 +30,13 @@ class serialReader:
             except: 
                 return False 
 
+
+
 if __name__ == '__main__':
     sr = serialReader()
     wfp = wildFirePredictor()
     sm = shelterManager()
     rm = routeManager()
-
     while True: 
         data = sr.readserial()
         if data: 

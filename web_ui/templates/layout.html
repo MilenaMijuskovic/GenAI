@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - WildFireEscape Plan</title>
+      {% else %}
+      <title>Welcome to WildFireEscape Plan</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>Hello World</div>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>
