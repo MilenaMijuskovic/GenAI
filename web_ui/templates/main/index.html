@@ -93,37 +93,52 @@ h1 {
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container m-1 p-1">
     <h1>WildFire Escaper</h1>
     <div class="variables">
         <div class="variable-box">
             <h2>Temperature</h2>
-            <p>{{ temperature }}°C</p>
+            <p>{{ data[0] }}°C</p>
         </div>
         <div class="variable-box">
             <h2>Humidity</h2>
-            <p>{{ humidity }}%</p>
+            <p>{{ data[2] }}%</p>
         </div>
         <div class="variable-box">
             <h2>Pressure</h2>
-            <p>{{ pressure }} hPa</p>
+            <p>{{ data[1] }} hPa</p>
         </div>
-        <div class="variable-box">
+        <!-- <div class="variable-box">
             <h2>Gas</h2>
             <p>{{ gas }}</p>
-        </div>
+        </div> -->
     </div>
 
-    {% if chanceofwildfire == 0 %}
-        <div class="status-icon ok">
-            Everything is OK!
-        </div>
-    {% else %}
-        <div class="status-icon danger">
-            Danger! Get to Safety!
-        </div>
-    {% endif %}
-
+    <div class="category">
+        {% if chanceofwildfire == 1%}
+            {% include 'main/all_good.html'%}
+        {% else %}
+            {% include 'main/danger.html'%}
+        {% endif %}
+    </div>
 </div>
 <div class="valleys"></div>
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    setInterval(readSensor, 5000);
+    function readSensor(){
+        $.post(
+            `http://localhost:5000/`, {}, 
+            function(data){
+                console.log(data)
+                $(".category").empty()
+                $(".category").html(data)
+            }
+        )
+    }
+</script>
+
 {% endblock %}

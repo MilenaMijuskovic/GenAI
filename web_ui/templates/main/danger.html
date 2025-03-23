@@ -1,5 +1,3 @@
-{% extends "layout.html" %}
-
 {% block style %}
 <style>
 body {
@@ -89,6 +87,9 @@ h1 {
         <div class="flame"></div>
         <div class="flame"></div>
     </div>
-    <h1>Danger! Get to safety!</h1>
+    <div class="status-icon danger">
+        Danger! Get to Safety!
+    </div>
+    <iframe class="map", src="/map" width="300" height="300"></iframe>
 </div>
 {% endblock %}

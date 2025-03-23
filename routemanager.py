@@ -76,7 +76,7 @@ class routeManager:
             # Add the polyline to the map
             folium.PolyLine(locations=coordinates, color="blue").add_to(m)
             # Display the map
-            m.save("route_map.html") #saves the map to a html file that can be opened in a browser.
+            m.save("web_ui/templates/main/route_map.html") #saves the map to a html file that can be opened in a browser.
             return m 
         else:
             print(f"Error: {response.status_code}")

@@ -4,8 +4,6 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, accuracy_score
 # Load the data
 
-
-
 class wildFirePredictor: 
     def __init__(self): 
         ######### TRAINING THE MODEL #########
@@ -21,8 +19,8 @@ class wildFirePredictor:
         self.model = model 
         self.columns = x.columns 
         y_pred = model.predict(x_test)
-        print("Accuracy:", accuracy_score(y_test, y_pred))
-        print("Classification Report:\n", classification_report(y_test, y_pred))
+        #print("Accuracy:", accuracy_score(y_test, y_pred))
+        #print("Classification Report:\n", classification_report(y_test, y_pred))
         ####################################
 
     def predict_wildfire(self, temp, RH, wind=0, rain=0, FFMC=85, DMC=50, DC=100, ISI=5, month="aug", day="fri"):
