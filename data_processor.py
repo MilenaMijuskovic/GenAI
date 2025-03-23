@@ -46,8 +46,8 @@ if __name__ == '__main__':
             chanceofwildfire = random.randint(0,1)
             #print(f"{'Wildfire Likely' if prediction else 'Wildfire unlikely'}")
             if chanceofwildfire: 
-                example_origin_latitude = 40.7128  # Example latitude (New York City)
-                example_origin_longitude = -74.0060  # Example longitude (New York City)
+                example_origin_latitude = 40.7128  # Example latitude (LA)
+                example_origin_longitude = -74.0060  # Example longitude (LA)
                 closest_accessible_shelters = sm.get_accessible_shelters(example_origin_latitude, example_origin_longitude)
                 closest_accessible_shelter = closest_accessible_shelters[0]["location"]
                 origin_coords = [example_origin_latitude, example_origin_longitude]
