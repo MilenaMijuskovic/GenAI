@@ -10,6 +10,12 @@ from sheltermanager import shelterManager
 from routemanager import routeManager
 import random 
 
+temperature = 1
+humidity = 2
+pressure = 3
+gas = 4
+chanceofwildfire = 0
+
 class serialReader: 
     def __init__(self): 
         self.prediction = 0 
