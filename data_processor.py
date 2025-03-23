@@ -30,8 +30,6 @@ class serialReader:
             except: 
                 return False 
 
-
-
 if __name__ == '__main__':
     sr = serialReader()
     wfp = wildFirePredictor()
@@ -54,5 +52,4 @@ if __name__ == '__main__':
                 origin_coords = [example_origin_latitude, example_origin_longitude]
                 destination_coords = [closest_accessible_shelter['lat'], closest_accessible_shelter['lng']]
                 rm.generate_html(origin_coords, destination_coords)
-
 
